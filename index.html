@@ -1,28 +1,151 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>عيادة دكتور أحمد</title>
+<title>عيادة دكتور أحمد | طب وتجميل الأسنان</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>عيادة دكتور أحمد</h1>
+  <div class="logo">🦷 عيادة دكتور أحمد</div>
   <nav>
     <a href="#">الرئيسية</a>
-    <a href="#">خدماتنا</a>
-    <a href="#">احجز</a>
+    <a href="#services">خدماتنا</a>
+    <a href="#booking">احجز</a>
+    <a href="#contact">تواصل معنا</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h2>ابتسامتك أجمل معانا</h2>
+  <h2>ابتسامتك أجمل معانا 😁</h2>
   <p>أفضل عيادة أسنان في القاهرة - حشو، تقويم، تبييض، زراعة</p>
-  <button>احجز دلوقتي</button>
-  <button class="second">شوف خدماتنا</button>
+  <a href="#booking"><button>احجز دلوقتي</button></a>
+  <a href="#services"><button class="second">شوف خدماتنا</button></a>
+  <div class="stats">
+    <div><b>+5000</b><span>مريض سعيد</span></div>
+    <div><b>+10</b><span>سنين خبرة</span></div>
+    <div><b>4.9 ⭐</b><span>تقييم المرضى</span></div>
+  </div>
 </section>
+
+<section id="services" class="section">
+  <h2 class="title">خدماتنا وأسعارنا</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600">
+      <h3>حشو الأسنان</h3>
+      <p>حشو تجميلي بدون ألم</p>
+      <div class="price">500 ج <span>بدل 700 ج</span></div>
+      <button onclick="bookService('حشو الأسنان - 500 ج')">احجز الخدمة</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=600">
+      <h3>تبييض الأسنان</h3>
+      <p>تبييض بالليزر في جلسة واحدة</p>
+      <div class="price">1500 ج <span>بدل 2000 ج</span></div>
+      <button onclick="bookService('تبييض الأسنان - 1500 ج')">احجز الخدمة</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600172454286-6f0c0e5e0a0a?w=600">
+      <h3>تقويم الأسنان</h3>
+      <p>تقويم معدني وشفاف</p>
+      <div class="price">8000 ج <span>تقسيط متاح</span></div>
+      <button onclick="bookService('تقويم الأسنان - 8000 ج')">احجز الخدمة</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600">
+      <h3>زراعة الأسنان</h3>
+      <p>زراعة ألماني بضمان مدى الحياة</p>
+      <div class="price">12000 ج <span>كشف مجاني</span></div>
+      <button onclick="bookService('زراعة الأسنان - 12000 ج')">احجز الخدمة</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=600">
+      <h3>تنظيف وتلميع</h3>
+      <p>إزالة الجير وتلميع</p>
+      <div class="price">300 ج <span>بدل 450 ج</span></div>
+      <button onclick="bookService('تنظيف وتلميع - 300 ج')">احجز الخدمة</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600">
+      <h3>أسنان الأطفال</h3>
+      <p>عيادة مخصصة للأطفال بدون خوف</p>
+      <div class="price">400 ج <span>بدل 550 ج</span></div>
+      <button onclick="bookService('أسنان الأطفال - 400 ج')">احجز الخدمة</button>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600">
+  <div>
+    <h2>دكتور أحمد محمود</h2>
+    <p>أخصائي طب وتجميل الأسنان - جامعة القاهرة<br>خبرة أكثر من 10 سنين.<br>عضو الجمعية المصرية لطب الأسنان.</p>
+    <p>📍 15 شارع مصطفى النحاس، مدينة نصر<br>🕒 السبت للخميس - من 12 ظهرا لـ 10 مساء<br>📞 01000000000</p>
+  </div>
+</section>
+
+<section id="booking" class="section">
+  <h2 class="title">احجز موعدك</h2>
+  <p style="text-align:center; margin-bottom:20px;">املا الفورم وهتتبعت رسالة الحجز على الواتساب فورا</p>
+  <form class="booking-form" onsubmit="confirmBooking(event)">
+    <input type="text" id="name" placeholder="اسمك بالكامل" required>
+    <input type="tel" id="phone" placeholder="رقم التليفون - 01xxxxxxxxx" required>
+    <select id="service">
+      <option value="حشو الأسنان - 500 ج">حشو الأسنان - 500 ج</option>
+      <option value="تبييض الأسنان - 1500 ج">تبييض الأسنان - 1500 ج</option>
+      <option value="تقويم الأسنان - 8000 ج">تقويم الأسنان - 8000 ج</option>
+      <option value="زراعة الأسنان - 12000 ج">زراعة الأسنان - 12000 ج</option>
+      <option value="تنظيف وتلميع - 300 ج">تنظيف وتلميع - 300 ج</option>
+      <option value="أسنان الأطفال - 400 ج">أسنان الأطفال - 400 ج</option>
+    </select>
+    <input type="date" id="date" required>
+    <select id="time">
+      <option>12:00 ظهرا</option>
+      <option>2:00 عصرا</option>
+      <option>4:00 عصرا</option>
+      <option>6:00 مساء</option>
+      <option>8:00 مساء</option>
+    </select>
+    <button type="submit" style="width:100%">تأكيد الحجز على واتساب ✅</button>
+    <p id="success" style="display:none; color:green; font-weight:bold; text-align:center; margin-top:10px;"></p>
+  </form>
+</section>
+
+<section id="contact" class="section">
+  <h2 class="title">تواصل معنا</h2>
+  <div class="contact-box">
+    <div>📞 <b>01000000000</b><br>واتساب متاح طول اليوم</div>
+    <div>📍 <b>مدينة نصر</b><br>15 ش مصطفى النحاس</div>
+    <div>🕒 <b>12 ظهرا - 10 مساء</b><br>السبت للخميس</div>
+  </div>
+</section>
+
+<footer>© 2026 عيادة دكتور أحمد - كل الحقوق محفوظة</footer>
+
+<script>
+const WHATSAPP_NUMBER = "201101028005"; // حط رقمك هنا بدل ده، شيل الـ 0 وحط 20 في الاول
+
+function bookService(serviceName){
+  document.getElementById('service').value = serviceName;
+  document.getElementById('booking').scrollIntoView({behavior:'smooth'});
+}
+
+function confirmBooking(e){
+  e.preventDefault();
+  let name = document.getElementById('name').value;
+  let phone = document.getElementById('phone').value;
+  let service = document.getElementById('service').value;
+  let date = document.getElementById('date').value;
+  let time = document.getElementById('time').value;
+  let message = `حجز جديد من الموقع 🦷%0A%0Aالاسم: ${name}%0Aالتليفون: ${phone}%0Aالخدمة: ${service}%0Aاليوم: ${date}%0Aالساعة: ${time}`;
+  document.getElementById('success').style.display = 'block';
+  document.getElementById('success').innerText = 'تم تجهيز حجزك! هيتفتح الواتساب دلوقتي ابعت الرسالة عشان الحجز يوصلنا ✅';
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${message}`, '_blank');
+}
+</script>
 
 </body>
 </html>
